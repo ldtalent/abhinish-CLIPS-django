@@ -1,0 +1,40 @@
+body {
+    padding-top: 74px;
+}
+
+/* Nav bar */
+.nav-bar {
+	padding-top: 7px;
+	padding-bottom: 4px;
+}
+.nav-img {
+	margin-top: 10px;
+	height: 38px;
+}
+.nav-button {
+	margin-left: 10px !important;
+}
+
+/* pusheen the cat*/
+#notification-box {
+  position: absolute;
+  top:0px;
+}
+#the-cat-box {
+  float: left;
+  height:73px;
+  width: 180px;
+  top:0px;
+  overflow: hidden;
+}
+
+#the-cat {
+  width: 180px;
+  margin-top: 5px;
+}
+
+#the-message {
+  float: left;
+  top: 4px;
+  display: none;
+}
