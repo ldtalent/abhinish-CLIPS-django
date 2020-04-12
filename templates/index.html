@@ -1,0 +1,90 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Jarvis">
+
+  <title>Food Plus</title>
+  <link rel="icon" type="image/png" href="/static/images/logo_pink.png"/>
+
+  <!--  Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+
+  <!-- Semantic Core CSS+JS -->
+  <link rel="stylesheet" href="{% static "css/semantic.min.css" %}"/>
+  <script src="{% static "js/jquery2.2.2.min.js" %}"></script>
+  <script src="{% static "js/semantic.min.js" %}"></script>
+  <script src="{% static "js/typed.min.js" %}"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static "css/index.css" %}"/>
+</head>
+
+<body>
+  <div id="full-page">
+    <img src="/static/images/indexbg.jpg"/>
+  </div>
+
+  <div id="wrapper" class="ui inverted center aligned segment">
+
+    <div id="foodplus-header" class="ui container">
+      <div class="ui secondary menu">
+        
+
+        <div class="right item">
+          <a href="/new"><button class="ui inverted basic button index-button">Add Dish</button> </a>
+          <a href="/about"><button class="ui inverted basic button index-button">About Us</button> </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="foodplus-center" class="ui text container">
+      <div class="header-big" id="header-big"> <font color="orange">Food</font>
+	<font color="red">Expert</font></div>
+      <div class="header-small" id="header-small"></div>
+
+      <div class="header-go"><a href="/preferences"><button id="go-button" class="huge ui inverted button">Bon Apetite</button></a></div>
+    </div>
+
+  </div>
+</body>
+
+<script>
+  function animateText() {
+    $("#header-small").typed({
+      strings: ["How is your taste today?", "Want to find something to eat?"],
+      typeSpeed: 5,
+      startDelay: 700,
+      callback: function() {
+        $(".header-go").transition('tada');
+      }
+    });
+  };
+
+  function tadaButton() {
+    setTimeout( function() {$(".header-go").transition('tada')} , 1000);
+  }
+
+  function cycleImages(){
+    var $active = $('#full-page .active');
+    var $next = ($active.next().length > 0) ? $active.next() : $('#full-page img:first');
+    $next.css('z-index',2);//move the next image up the pile
+    $active.fadeOut(1500,function(){//fade out the top image
+      $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+      $next.css('z-index',3).addClass('active');//make the next image the top one
+    });
+  }
+
+  $(document).ready(function(){
+    animateText();
+    setInterval('cycleImages()', 8000);
+    setInterval('tadaButton()', 8000);
+  })
+</script>
+
+</html>
