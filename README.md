@@ -12,7 +12,22 @@ by adding his/her culinary knowledge.
 - CLIPS
 
 ## Setup
+Make sure that you have specific python version 2.7 installed as it does not work with newer version
+
 - Pillow
 pip install Pillow
 - pyClips
 pip install pyclips
+- Django
+pip install django
+
+## How to Run
+
+Create a virtual environment
+>pip install virtualenv
+>virtualenv myenv
+>myenv\Scripts\activate
+
+Execute manage.py
+>python runserver manage.py
+
