@@ -22,12 +22,8 @@ pip install pyclips
 pip install django
 
 ## How to Run
-
--pip install virtualenv
--virtualenv myenv
--myenv\Scripts\activate
-
-
-- Execute manage.py
-python runserver manage.py
+%%pip install virtualenv%%
+%%virtualenv myenv%%
+%%myenv\Scripts\activate%%
+%%python runserver manage.py%%
 
