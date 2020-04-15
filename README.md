@@ -23,12 +23,10 @@ pip install django
 
 ## How to Run
 
-pip install virtualenv
--
-virtualenv myenv
--
-myenv\Scripts\activate
--
+-pip install virtualenv
+-virtualenv myenv
+-myenv\Scripts\activate
+
 
 - Execute manage.py
 python runserver manage.py
